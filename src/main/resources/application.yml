@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: auth
+  profiles:
+    include:
+      - info
+  security:
+    jwt:
+      sign: test-sign
+  mvc:
+    converters:
+      preferred-json-mapper: jackson
+server:
+  servlet:
+    context-path: /app
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+    include-exception: false
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+        security: DEBUG
+config:
+  user:
+    name: test
+    password: $2a$10$MsNe2uZT9vomrUsVgFLxRu0uYcma7B/FcO03jBmT5yHqYaEwTBeL2
+    role: admin
+    permission: all
